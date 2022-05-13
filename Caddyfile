@@ -1,0 +1,7 @@
+foo.localhost:80 {
+  reverse_proxy foo:3000
+}
+
+bar.localhost:80 {
+  reverse_proxy bar:5000
+}

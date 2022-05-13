@@ -1,0 +1,34 @@
+version: '3.9'
+services:
+  caddy: # Reverse proxy.
+    image: caddy:2-alpine
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile
+    networks:
+      app_net:
+        ipv4_address: 219.20.128.0
+
+  foo: # App foo.
+    build: ./
+    environment:
+      - PORT=3000
+    networks:
+      app_net:
+        ipv4_address: 219.20.128.1
+
+  bar: # App bar.
+    build: ./
+    environment:
+      - PORT=5000
+    networks:
+      app_net:
+        ipv4_address: 219.20.128.2
+
+networks: # Define custom network to assign static IPs to the container.
+  app_net:
+    ipam:
+      config:
+        - subnet: 219.20.0.0/16
