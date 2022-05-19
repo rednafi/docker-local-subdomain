@@ -10,7 +10,7 @@ Ever had a hard time remembering the port numbers of different services in your 
 the services via `<subdomain>.localhost` instead of `localhost:<port>`.
 
 *This is a simple node stack running two [Express](https://expressjs.com/) servers in two
-different containers. You can access the sevices via `foo.localhost` and `bar.localhost`
+different containers. You can access the services via `foo.localhost` and `bar.localhost`
 respectively. Here, [Caddy](https://caddyserver.com/) is used as a reverse proxy to
 direct the requests to the appropriate containers.*
 
@@ -21,7 +21,7 @@ compose v2, [cURL](https://curl.se/), and [jq](https://stedolan.github.io/jq/) i
 
 ## Installation
 
-Clone the repo, go to the root directory, an run:
+Clone the repo, go to the root directory, and run:
 
 ```
 make up
@@ -48,7 +48,7 @@ This returns:
 }
 ```
 
-Similary, you can access the second service as follows:
+Similarly, you can access the second service as follows:
 
 ```bash
 curl -s -X GET http://bar.localhost | jq
