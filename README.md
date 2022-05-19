@@ -1,7 +1,7 @@
 <div align="center">
 <h1>Docker Local Subdomain</h1>
 
-<img src="art/logo.svg" alt="logo" height="300%">
+<img src="art/logo.svg" alt="logo" height="200%" viewBox="0 0 500 500">
 
 </div>
 
